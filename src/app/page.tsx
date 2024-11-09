@@ -22,9 +22,9 @@ export default function Home() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: roadMap,
-          start: '20% center',
-          end: '82% center',
-          scrub: true,
+          start: '85% 40%',
+          end: 'bottom 10%',
+          scrub: 2,
           markers: true,
 
 
@@ -38,11 +38,14 @@ export default function Home() {
             translateY: '-30%',
             rotation: -90,
             markers: true,
+            scrub: 2,
+
             ease: 'power1.out',
           })
           .to(
             `.image-${nextIndex}`,
             {
+              scrub: 100,
               scale: 1,
               ease: 'power2.out',
 
@@ -60,9 +63,8 @@ export default function Home() {
           toggleActions: 'play none none reverse',
         },
       })
-      gsap.to(roadMap.querySelector('.roadmap-progress'), {
+      gsap.to(roadMap.querySelector('.progress'), {
         scaleY: 1,
-        transformOrigin: 'top',
         scrollTrigger: {
           trigger: roadMap,
           start: 'top 40%',
@@ -77,7 +79,7 @@ export default function Home() {
     <ReactLenis root options={{ autoRaf: true }}>
       <div className="h-[200vw] flex items-center justify-center">
         <div className="flex gap-10">
-          <div className="sticky  w-[400px] h-[300px] flex flex-col gap-5 " id="movie-card">
+          <div className="sticky top-0  w-[400px] h-[300px] flex flex-col gap-5 " id="movie-card">
             <div className="w-[400px] h-[300px]  z-50 absolute top-0 right-0 image-0 ">
               <Image src="/deathNote.jpg" alt="image" width={400} height={400} className="w-full h-full object-cover rounded-xl" />
             </div>
@@ -100,36 +102,92 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col gap-5 ">
-            <div className="w-[400px] h-[300px] flex flex-col gap-2  movie-card ">
-              <h1 className="text-3xl">deathNote</h1>
-              <p className="text-sm text-gray-500"> 2007 </p>
-              <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+
+            <div className="w-[400px] h-[300px] flex  movie-card ">
+              <div className="flex gap-10">
+                <div className="relative  w-1 flex h-full">
+                  <div className="absolute inset-0 bg-white rounded progress scale-y-0 origin-top"></div>
+                  <div className="relative w-1 h-full rounded bg-white/15 progress"></div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-4xl">deathNote</h1>
+                  <p className="text-sm text-gray-500"> 2007 </p>
+                  <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+                </div>
+
+              </div>
             </div>
-            <div className="w-[400px] h-[300px] flex flex-col gap-2  movie-card">
-              <h1 className="text-3xl">deathNote</h1>
-              <p className="text-sm text-gray-500"> 2007 </p>
-              <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+            <div className="w-[400px] h-[300px] flex  movie-card ">
+              <div className="flex gap-10">
+                <div className="relative  w-1 flex h-full">
+                  <div className="absolute inset-0 bg-white rounded progress scale-y-0 origin-top"></div>
+                  <div className="relative w-1 h-full rounded bg-white/15 progress"></div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-4xl">deathNote</h1>
+                  <p className="text-sm text-gray-500"> 2007 </p>
+                  <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+                </div>
+
+              </div>
             </div>
-            <div className="w-[400px] h-[300px] flex flex-col gap-2  movie-card">
-              <h1 className="text-3xl">deathNote</h1>
-              <p className="text-sm text-gray-500"> 2007 </p>
-              <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+            <div className="w-[400px] h-[300px] flex  movie-card ">
+              <div className="flex gap-10">
+                <div className="relative  w-1 flex h-full">
+                  <div className="absolute inset-0 bg-white rounded progress scale-y-0 origin-top"></div>
+                  <div className="relative w-1 h-full rounded bg-white/15 progress"></div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-4xl">deathNote</h1>
+                  <p className="text-sm text-gray-500"> 2007 </p>
+                  <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+                </div>
+
+              </div>
             </div>
-            <div className="w-[400px] h-[300px] flex flex-col gap-2  movie-card ">
-              <h1 className="text-3xl">deathNote</h1>
-              <p className="text-sm text-gray-500"> 2007 </p>
-              <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+            <div className="w-[400px] h-[300px] flex  movie-card ">
+              <div className="flex gap-10">
+                <div className="relative  w-1 flex h-full">
+                  <div className="absolute inset-0 bg-white rounded progress scale-y-0 origin-top"></div>
+                  <div className="relative w-1 h-full rounded bg-white/15 progress"></div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-4xl">deathNote</h1>
+                  <p className="text-sm text-gray-500"> 2007 </p>
+                  <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+                </div>
+
+              </div>
             </div>
-            <div className="w-[400px] h-[300px] flex flex-col gap-2  movie-card ">
-              <h1 className="text-3xl">deathNote</h1>
-              <p className="text-sm text-gray-500"> 2007 </p>
-              <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+            <div className="w-[400px] h-[300px] flex  movie-card ">
+              <div className="flex gap-10">
+                <div className="relative  w-1 flex h-full">
+                  <div className="absolute inset-0 bg-white rounded progress scale-y-0 origin-top"></div>
+                  <div className="relative w-1 h-full rounded bg-white/15 progress"></div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-4xl">deathNote</h1>
+                  <p className="text-sm text-gray-500"> 2007 </p>
+                  <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+                </div>
+
+              </div>
             </div>
-            <div className="w-[400px] h-[300px] flex flex-col gap-2  movie-card">
-              <h1 className="text-3xl">deathNote</h1>
-              <p className="text-sm text-gray-500"> 2007 </p>
-              <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+            <div className="w-[400px] h-[300px] flex  movie-card ">
+              <div className="flex gap-10">
+                <div className="relative  w-1 flex h-full">
+                  <div className="absolute inset-0 bg-white rounded progress scale-y-0 origin-top"></div>
+                  <div className="relative w-1 h-full rounded bg-white/15 progress"></div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h1 className="text-4xl">deathNote</h1>
+                  <p className="text-sm text-gray-500"> 2007 </p>
+                  <p className="text-md text-gray-500"> death note is a manga series that appear in anime at the 2007 summer anime festival the main character is light yagami a very smart person who is obsessed with killing people</p>
+                </div>
+
+              </div>
             </div>
+
           </div>
 
         </div>
