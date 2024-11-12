@@ -15,7 +15,7 @@ function MovieCard({ title, year, description }: MovieCardProps) {
         <div className="flex flex-col gap-2">
           <h1 className="text-4xl">{title}</h1>
           <p className="text-lg text-gray-500">{year}</p>
-          <p className="text-xl text-gray-500">{description}</p>
+          <p className="text-xl text-gray-500 line-clamp-4">{description}</p>
         </div>
       </div>
     </div>
