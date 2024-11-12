@@ -92,7 +92,7 @@ const { data: movies, error, isLoading } = useQuery({
 });
 return (
   <ReactLenis root options={{ autoRaf: true }}>
-    <div className="h-[300vw] flex items-center justify-center bg-black" >
+    <div className="h-fit w-full py-44 flex items-center justify-center bg-black" >
       <div className="flex gap-10">
         <div className="sticky top-[15%]  w-[400px] h-[450px] flex flex-col gap-5 " id="movie-card">
           <div className="w-full h-full  z-50 absolute top-0 right-0 image-0 ">
