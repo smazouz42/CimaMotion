@@ -4,7 +4,7 @@ interface MovieCardProps {
   year: string;
   description: string;
 }
-function MovieCard({ title, year, description }: MovieCardProps) {
+function MovieCard({ title, description }: MovieCardProps) {
   return (
     <div className="max-w-[500px] h-[450px] flex movie-card">
       <div className="flex gap-10">
@@ -14,7 +14,6 @@ function MovieCard({ title, year, description }: MovieCardProps) {
         </div>
         <div className="flex flex-col gap-2">
           <h1 className="text-4xl">{title}</h1>
-          <p className="text-lg text-gray-500">{year}</p>
           <p className="text-xl text-gray-500 line-clamp-4">{description}</p>
         </div>
       </div>

@@ -3,11 +3,6 @@ import Image from "next/image";
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ReactLenis, useLenis } from 'lenis/react'
-import { MovieCard } from "../MovieCard";
-import { useQuery } from '@tanstack/react-query'
-import { useRef } from "react";
-import { cn } from "@/app/lib/lib";
 import useFetchMovies from "../hooks/useFetchMovies";
 gsap.registerPlugin(ScrollTrigger)
 
@@ -25,7 +20,6 @@ function MoviesList() {
           start: '75% 30%',
           end: '85% 20%',
           scrub: 2,
-          opacity : 0,
           toggleActions: 'play none none reverse',
         },
       })
@@ -84,9 +78,9 @@ function MoviesList() {
   }
 
   return (
-    <div className="hamid h-fit w-full py-44 flex items-center justify-center bg-black" >
+    <div className="h-fit w-full py-44 flex items-center justify-center bg-black" >
       <div className="flex gap-10">
-        <div className="sticky top-[15%]  w-[400px] h-[500px] flex flex-col  ">
+        <div className="sticky top-[15%]  w-[400px] h-[500px] hidden md:flex flex-col gap ~gap-32/44  ">
           <div className="w-full h-full  z-[10] absolute top-0 right-0 image-0 ">
             <Image src={movies[0].img} alt="image" width={400} height={400} className="w-full h-full object-cover rounded-xl" />
           </div>
@@ -123,7 +117,7 @@ function MoviesList() {
           <div className="flex flex-col gap-5">
             {movies.map((movie, index) => (
               <div className="max-w-[500px] h-[450px] flex movie-card" key={index}>
-                <div className="flex gap-10">
+                <div className="flex gap-10 sm:flex-row flex-col">
                   <div className="relative w-1 flex h-full">
                     <div className="absolute inset-0 bg-white rounded progress scale-y-0 origin-top"></div>
                     <div className="relative w-1 h-full rounded bg-white/15 progress"></div>
@@ -133,6 +127,7 @@ function MoviesList() {
                     <p className="text-lg text-gray-500">1900</p>
                     <p className="text-xl text-gray-500 line-clamp-4">{movie.description}</p>
                   </div>
+                  <Image src={movie.img} alt="image" width={400} height={400} />
                 </div>
               </div>
             ))}

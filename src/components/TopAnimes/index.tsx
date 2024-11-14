@@ -27,7 +27,6 @@ const TopAnimes = () => {
               trigger: card,
               start: "top 80%",
               end: "top 50%",
-              scrub: 1,
             },
           }
         );
@@ -41,14 +40,14 @@ const TopAnimes = () => {
 
   return (
     <div ref={containerRef} className="flex flex-col gap-4 bg-black" >
-      <h1 className="text-5xl text-white flex justefy-center items-center border w-full line-clamp-1  ">
+      <h1 className="~text-2xl/5xl text-white flex justefy-center items-center border w-full line-clamp-1  ">
         Top 10 Animes This Week
       </h1>
       <div ref={containerRef} className="flex flex-wrap border justify-center gap-20 py-40  overflow-hidden">
         {movies.map((movie: any) => (
           <div key={movie.id} className="movie-card">
             <div className="w-[281px] h-[400px] overflow-hidden">
-              <h1 className="text-2xl text-white justefy-center w-full border line-clamp-1">
+              <h1 className="~text-xl/2xl text-white justefy-center w-full border line-clamp-1">
                 {movie.name}
               </h1>
               <Image

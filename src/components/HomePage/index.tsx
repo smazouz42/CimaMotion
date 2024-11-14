@@ -2,8 +2,7 @@ import Image from "next/image";
 
 const HomePage = () => {
   return (
-    <div className="relative w-screen h-screen bg-black overflow-hidden">
-      {/* Background Image */}
+    <div className="relative w-full aspect-[1.7778] bg-black overflow-hidden">
       <Image
         src="/background.jpeg"
         alt="Background Image"
@@ -33,8 +32,8 @@ const HomePage = () => {
       ></div>
 
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center flex flex-col gap-4 w-full items-center">
-        <h1 className="text-9xl max-w-7xl border-b-4 pb-4">Welcome to AnyTube</h1>
-        <p className="text-2xl max-w-2xl">
+        <h1 className="~text-4xl/9xl ~max-w-2xl/7xl border-b-4 pb-4">Welcome to AnyTube</h1>
+        <p className="~text-lg/2xl ~max-w-lg/2xl">
           This website provides you with the most popular animes in the world at the moment.
         </p>
       </div>

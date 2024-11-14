@@ -1,10 +1,10 @@
 'use client'
 import { useEffect, useRef } from "react";
-import { HomePage } from "./components/HomePage";
-import { MoviesList } from "./components/MoviesList"
+import { HomePage } from "../components/HomePage";
+import { MoviesList } from "../components/MoviesList"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Lenis from "lenis";
-import TopAnimes from "./components/TopAnimes";
+import TopAnimes from "../components/TopAnimes";
 
 
 const queryClient = new QueryClient()
