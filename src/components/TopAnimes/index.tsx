@@ -1,5 +1,5 @@
 import Image from "next/image";
-import useFetchSpringAnimes from "../hooks/useFetchSpringAnimes";
+import  useFetchSpringAnime  from "../hooks/useFetchSpringAnimes"
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const SpringAnime = () => {
-  const { data: movies, error, isLoading } = useFetchSpringAnimes()
+  const { data: movies, error, isLoading } = useFetchSpringAnime()
   const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (containerRef.current && movies) {
@@ -38,26 +38,25 @@ const SpringAnime = () => {
   if (!movies || movies.length === 0) return <p>No movies found.</p>;
 
   return (
-    <div ref={containerRef} className="flex flex-col gap-10 bg-black py-10" >
+    <div ref={containerRef} className="flex flex-col gap-10 bg-black" >
       <h1 className="~text-4xl/5xl text-white text-center w-full line-clamp-1  ">
-        Spring Animes 2024
+        Top 10 Animes This Week
       </h1>
       <div ref={containerRef} className="flex flex-wrap justify-center ~gap-10/20">
-        {movies.map((movie) => (
+        {movies.map((movie: any) => (
           <div key={movie.id} className="movie-card">
-            <div className="group w-[281px] h-[400px] overflow-hidden relative">
+            <div className="w-[281px] h-[400px] overflow-hidden p">
+              <h1 className="text-2xl text-white w-full  line-clamp-1 my-2">
+                {movie.title}
+              </h1>
               <Image
-                src={movie.image || ""}
+                src={movie.images.jpg.large_image_url}
                 alt={movie.title}
                 width={283}
                 height={300}
                 className="w-full h-full object-cover"
               />
-              <h1 className="absolute bottom-0 left-0  w-full  text-xl text-white bg-gray-900 bg-opacity-85 px-4 py-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                {movie.title}
-              </h1>
             </div>
-
           </div>
         ))}
       </div>

@@ -27,7 +27,7 @@ function MoviesList() {
       if (hasNextImage) {
         tl.add(`.image-${index}-start`)
           .to(`.image-${index}`, {
-            translateX: '-190%',
+            translateX: '-290%',
             translateY: '-30%',
             rotation: -90,
             markers: true,

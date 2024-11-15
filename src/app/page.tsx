@@ -1,10 +1,10 @@
 'use client'
 import { useEffect, useRef } from "react";
 import { HomePage } from "../components/HomePage";
-import { MoviesList } from "../components/AnimeList"
+import { MoviesList } from "../components/PopularAnimes"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Lenis from "lenis";
-import TopAnimes from "../components/SpringAnimes";
+import SpringAnime from "../components/SpringAnimes";
 
 
 const queryClient = new QueryClient()
@@ -32,7 +32,7 @@ export default function Home() {
     <QueryClientProvider client={queryClient}>
       <HomePage />
       <MoviesList />
-      <TopAnimes />
+      <SpringAnime />
     </QueryClientProvider>
   )
 }
