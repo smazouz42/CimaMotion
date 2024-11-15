@@ -9,11 +9,11 @@ export async function GET() {
       return Response.json({ message: 'Failed to fetch movies' }, { status: response.status });
     }
 
-    const data = await response.json();
+    const rep = await response.json();
+    const animes = rep.data.slice(0, 10);
     return Response.json(animes);
   } catch (error) {
-          console.log("al2omor ma taiba");
 
-    return Response.json({ message: 'Internal Server Error' }, { status: 500 });
+    return Response.json({ message: error.message }, { status: 500 });
   }
 }

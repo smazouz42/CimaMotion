@@ -3,7 +3,7 @@ import Image from "next/image";
 import { gsap } from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import useFetchMovies from "../hooks/useFetchMovies";
+import useFetchMovies from "../hooks/useFetchPOpularAnimes";
 import { MovieCard } from "./AnimeCard";
 import { cn } from "@/app/lib/lib";
 gsap.registerPlugin(ScrollTrigger)
@@ -12,7 +12,6 @@ function MoviesList() {
   const { data: movies, error, isLoading } = useFetchMovies()
   useGSAP(() => {
     const roadMaps = document.querySelectorAll('.movie-card')
-    console.log("RoadMaps ", roadMaps);
     roadMaps.forEach((roadMap, index) => {
       const nextIndex = index + 1
       const hasNextImage = nextIndex < roadMaps.length
@@ -83,11 +82,11 @@ function MoviesList() {
     <div className="h-fit w-full ~py-14/32 flex items-center justify-center bg-black" >
       <div className="flex ~gap-4/8">
         <div className=" sticky top-[15%] w-[300px] xl:w-[350px] h-[500px] xl:h-[500px] hidden md:flex flex-col gap ~gap-32/44  ">
-          {movies.map((movie, index) => (
+          {movies.map((movie, index: number) => (
             <div key={movie.id} className={cn("w-full h-full  absolute top-0 right-0  ", { "scale-[40%]": index !== 0 }, `image-${index} `)} style={{
               zIndex: 10 - index
             }}  >
-              <Image src={movie.images.jpg.large_image_url} alt="image" width={400} height={400} className="w-full h-full object-cover" />
+              <Image src={movie.image} alt="image" width={400} height={400} className="w-full h-full object-cover" />
             </div>
           ))}
 
@@ -95,8 +94,8 @@ function MoviesList() {
         <div className="flex flex-col gap-4">
           <h1 className="text-7xl text-white">Movies</h1>
           <div className="flex flex-col gap-5">
-            {movies.map((movie, index) => (
-              <MovieCard key={index} title={movie.title} description={movie.synopsis} img={movie.images.jpg.large_image_url} />
+            {movies.map((movie, index:number) => (
+              <MovieCard key={index} title={movie.title} description={movie.synopsis} img={movie.image} />
             ))}
           </div>
         </div>

@@ -4,7 +4,7 @@ import { HomePage } from "../components/HomePage";
 import { MoviesList } from "../components/AnimeList"
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Lenis from "lenis";
-import TopAnimes from "../components/TopAnimes";
+import TopAnimes from "../components/SpringAnimes";
 
 
 const queryClient = new QueryClient()

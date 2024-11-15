@@ -1,5 +1,5 @@
 import Image from "next/image";
-import  useFetchTopAnimes  from "../hooks/useFetchSpringAnimes"
+import useFetchSpringAnimes from "../hooks/useFetchSpringAnimes";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const TopAnimes = () => {
-  const { data: movies, error, isLoading } = useFetchTopAnimes()
+  const { data: movies, error, isLoading } = useFetchSpringAnimes()
   const containerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (containerRef.current && movies) {
@@ -40,17 +40,17 @@ const TopAnimes = () => {
   return (
     <div ref={containerRef} className="flex flex-col gap-10 bg-black" >
       <h1 className="~text-4xl/5xl text-white text-center w-full line-clamp-1  ">
-        Top 10 Animes This Week
+        Spring Animes 2024
       </h1>
       <div ref={containerRef} className="flex flex-wrap justify-center ~gap-10/20">
-        {movies.map((movie: any) => (
+        {movies.map((movie) => (
           <div key={movie.id} className="movie-card">
             <div className="w-[281px] h-[400px] overflow-hidden p">
               <h1 className="text-2xl text-white w-full  line-clamp-1 my-2">
                 {movie.title}
               </h1>
               <Image
-                src={movie.images.jpg.large_image_url}
+                src={movie.image || ""}
                 alt={movie.title}
                 width={283}
                 height={300}
