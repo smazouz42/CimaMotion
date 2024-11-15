@@ -1,5 +1,5 @@
 import Image from "next/image";
-import useFetchMovies from "../hooks/useFetchMovies";
+import  useFetchTopAnimes  from "../hooks/useFetchSpringAnimes"
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,9 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const TopAnimes = () => {
-  const { data: movies, error, isLoading } = useFetchMovies();
+  const { data: movies, error, isLoading } = useFetchTopAnimes()
   const containerRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     if (containerRef.current && movies) {
       const cards = containerRef.current.querySelectorAll(".movie-card");
@@ -39,26 +38,26 @@ const TopAnimes = () => {
   if (!movies || movies.length === 0) return <p>No movies found.</p>;
 
   return (
-    <div ref={containerRef} className="flex flex-col gap-4 bg-black" >
-      <h1 className="~text-2xl/5xl text-white flex justefy-center items-center border w-full line-clamp-1  ">
+    <div ref={containerRef} className="flex flex-col gap-10 bg-black" >
+      <h1 className="~text-4xl/5xl text-white text-center w-full line-clamp-1  ">
         Top 10 Animes This Week
       </h1>
-      <div ref={containerRef} className="flex flex-wrap border justify-center gap-20 py-40  overflow-hidden">
+      <div ref={containerRef} className="flex flex-wrap justify-center ~gap-10/20">
         {movies.map((movie: any) => (
           <div key={movie.id} className="movie-card">
-            <div className="w-[281px] h-[400px] overflow-hidden">
-              <h1 className="~text-xl/2xl text-white justefy-center w-full border line-clamp-1">
-                {movie.name}
+            <div className="w-[281px] h-[400px] overflow-hidden p">
+              <h1 className="text-2xl text-white w-full  line-clamp-1 my-2">
+                {movie.title}
               </h1>
               <Image
-                src={movie.img}
-                alt={movie.name}
+                src={movie.images.jpg.large_image_url}
+                alt={movie.title}
                 width={283}
                 height={300}
                 className="w-full h-full object-cover"
               />
             </div>
-            =        </div>
+          </div>
         ))}
       </div>
     </div>

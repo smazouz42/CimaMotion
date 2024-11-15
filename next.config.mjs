@@ -9,6 +9,7 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+    domains: ['cdn.myanimelist.net'],
   },
 };
 

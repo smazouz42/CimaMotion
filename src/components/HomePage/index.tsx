@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HomePage = () => {
   return (
-    <div className="relative w-full aspect-[1.7778] bg-black overflow-hidden">
+    <div className="relative w-full md:aspect-[1.7778] h-[700px] bg-black overflow-hidden">
       <Image
         src="/background.jpeg"
         alt="Background Image"

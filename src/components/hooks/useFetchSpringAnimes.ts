@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query"
 
 async function getMovies() {
   console.log('fetching movies');
-  const response = await fetch('/api/SpringAnimes');
+  const response = await fetch('/api/TrendingAnimes');
   const data = await response.json();
   return data
 }
