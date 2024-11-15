@@ -5,7 +5,7 @@ export interface PopularAnimes {
   title: string;
   images: {
     jpg: {
-      image_url: string;
+      large_image_url: string;
     };
   }
   image: string
@@ -21,7 +21,7 @@ async function getPopularAnimes() {
     return {
       synopsis: item.synopsis,
       title: item.title,
-      image: item.images.jpg.image_url,
+      image: item.images.jpg.large_image_url,
     }
   }) as PopularAnimes[]
   return new_data
