@@ -45,10 +45,7 @@ const TopAnimes = () => {
       <div ref={containerRef} className="flex flex-wrap justify-center ~gap-10/20">
         {movies.map((movie) => (
           <div key={movie.id} className="movie-card">
-            <div className="w-[281px] h-[400px] overflow-hidden p">
-              <h1 className="text-2xl text-white w-full  line-clamp-1">
-                {movie.title}
-              </h1>
+            <div className="group w-[281px] h-[400px] overflow-hidden relative">
               <Image
                 src={movie.image || ""}
                 alt={movie.title}
@@ -56,7 +53,11 @@ const TopAnimes = () => {
                 height={300}
                 className="w-full h-full object-cover"
               />
+              <h1 className="absolute bottom-0 left-0  w-full  text-xl text-white bg-gray-900 bg-opacity-85 px-4 py-2 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                {movie.title}
+              </h1>
             </div>
+
           </div>
         ))}
       </div>
