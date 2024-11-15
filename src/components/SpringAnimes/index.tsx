@@ -46,7 +46,7 @@ const TopAnimes = () => {
         {movies.map((movie) => (
           <div key={movie.id} className="movie-card">
             <div className="w-[281px] h-[400px] overflow-hidden p">
-              <h1 className="text-2xl text-white w-full  line-clamp-1 my-2">
+              <h1 className="text-2xl text-white w-full  line-clamp-1">
                 {movie.title}
               </h1>
               <Image
