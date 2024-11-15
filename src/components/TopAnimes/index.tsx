@@ -43,7 +43,7 @@ const SpringAnime = () => {
         Top 10 Animes This Week
       </h1>
       <div ref={containerRef} className="flex flex-wrap justify-center ~gap-10/20">
-        {movies.map((movie: any) => (
+        {movies.map((movie) => (
           <div key={movie.id} className="movie-card">
             <div className="w-[281px] h-[400px] overflow-hidden p">
               <h1 className="text-2xl text-white w-full  line-clamp-1 my-2">

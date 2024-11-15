@@ -38,7 +38,7 @@ const SpringAnime = () => {
   if (!movies || movies.length === 0) return <p>No movies found.</p>;
 
   return (
-    <div ref={containerRef} className="flex flex-col gap-10 bg-black py-10" >
+    <div ref={containerRef} className="flex flex-col gap-10 bg-black py-10 overflow-hidden" >
       <h1 className="~text-4xl/5xl text-white text-center w-full line-clamp-1  ">
         Spring Animes 2024
       </h1>

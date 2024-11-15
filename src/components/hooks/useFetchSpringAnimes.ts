@@ -5,7 +5,7 @@ export interface SpringAnime {
   title: string;
   images: {
     jpg: {
-      image_url: string;
+      large_image_url: string;
     };
   }
   image?: string
@@ -20,7 +20,7 @@ async function SpringAnimes() {
     return {
       synopsis: item.synopsis,
       title: item.title,
-      image: item.images.jpg.image_url,
+      image: item.images.jpg.large_image_url,
     }
   }) as SpringAnime[]
   return new_data
