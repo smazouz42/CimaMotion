@@ -92,7 +92,7 @@ function MoviesList() {
 
         </div>
         <div className="flex flex-col gap-4">
-          <h1 className="text-7xl text-white">Movies</h1>
+          <h1 className="~text-5xl/6xl text-white">Popular Animes</h1>
           <div className="flex flex-col gap-5">
             {movies.map((movie, index:number) => (
               <MovieCard key={index} title={movie.title} description={movie.synopsis} img={movie.image} />

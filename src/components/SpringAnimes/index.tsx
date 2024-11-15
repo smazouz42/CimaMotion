@@ -38,7 +38,7 @@ const TopAnimes = () => {
   if (!movies || movies.length === 0) return <p>No movies found.</p>;
 
   return (
-    <div ref={containerRef} className="flex flex-col gap-10 bg-black" >
+    <div ref={containerRef} className="flex flex-col gap-10 bg-black py-10" >
       <h1 className="~text-4xl/5xl text-white text-center w-full line-clamp-1  ">
         Spring Animes 2024
       </h1>
